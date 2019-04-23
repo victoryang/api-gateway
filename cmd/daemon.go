@@ -5,9 +5,9 @@ import (
     "os/signal"
     "syscall"
 
-    "github.com/victoryang/distributed_tasks_framework/api"
-    "github.com/victoryang/distributed_tasks_framework/config"
-    Log "github.com/victoryang/distributed_tasks_framework/log"
+    "github.com/victoryang/api-gateway/api"
+    "github.com/victoryang/api-gateway/config"
+    Log "github.com/victoryang/api-gateway/log"
 
     "github.com/spf13/cobra"
 )

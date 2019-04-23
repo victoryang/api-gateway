@@ -1,8 +1,8 @@
 package cmd
 
 import (
-    "github.com/victoryang/distributed_tasks_framework/config"
-    Log "github.com/victoryang/distributed_tasks_framework/log"
+    "github.com/victoryang/api-gateway/config"
+    Log "github.com/victoryang/api-gateway/log"
 )
 
 func ConfigServerLog(cfg *config.GlobalConfiguration) error {

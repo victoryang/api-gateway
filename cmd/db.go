@@ -1,9 +1,9 @@
 package cmd
 
 import(
-    "github.com/victoryang/distributed_tasks_framework/config"
-    "github.com/victoryang/distributed_tasks_framework/db"
-    //Log "github.com/victoryang/distributed_tasks_framework/log"
+    "github.com/victoryang/api-gateway/config"
+    "github.com/victoryang/api-gateway/db"
+    //Log "github.com/victoryang/api-gateway/log"
 )
 
 func SetUpDatabase(c *config.Database) {

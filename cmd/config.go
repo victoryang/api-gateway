@@ -3,8 +3,8 @@ package cmd
 import(
     "path"
 
-    "github.com/victoryang/distributed_tasks_framework/config"
-    Log "github.com/victoryang/distributed_tasks_framework/log"
+    "github.com/victoryang/api-gateway/config"
+    Log "github.com/victoryang/api-gateway/log"
 )
 
 var configFile string
