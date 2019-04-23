@@ -3,7 +3,7 @@ package config
 import (
 	"io/ioutil"
 	"gopkg.in/yaml.v2"
-	Log "elibot-apiserver/log"
+	Log "api-gateway/log"
 )
 
 func (d *DEBUG) UnmarshalYAML(unmarshal func(interface{}) error) error {
