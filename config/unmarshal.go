@@ -2,8 +2,9 @@ package config
 
 import (
 	"io/ioutil"
+	
+	Log "github.com/victoryang/log"
 	"gopkg.in/yaml.v2"
-	Log "api-gateway/log"
 )
 
 func (d *DEBUG) UnmarshalYAML(unmarshal func(interface{}) error) error {
