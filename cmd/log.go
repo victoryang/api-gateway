@@ -1,6 +1,9 @@
 package cmd
 
 import (
+    "path"
+    "os"
+
     "github.com/victoryang/api-gateway/config"
     Log "github.com/victoryang/api-gateway/log"
 )

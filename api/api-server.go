@@ -59,7 +59,7 @@ func (s *Server) configServerHandler() http.Handler {
         s.AccessLog.Logger = logger
         n.Use(s.AccessLog.Logger)
     }
-    
+
     n.Use(middleware.NewCorsHandler())
 
     n.UseHandler(apiv1.RegisterAPIv1(r))
@@ -69,9 +69,6 @@ func (s *Server) configServerHandler() http.Handler {
 
 func NewApiServer(c *config.GlobalConfiguration) *Server {
     s := new(Server)
-    
-    apiv1.SetRootPath(c.UploadPath)
-    apiv1.InitAuthorization(c.Secure.WhiteList)
 
     s.AccessLog.File = c.AccessLogsFile
     s.EntryPoint.httpServer = &http.Server {

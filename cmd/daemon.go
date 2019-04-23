@@ -7,6 +7,7 @@ import (
 
     "github.com/victoryang/api-gateway/api"
     "github.com/victoryang/api-gateway/config"
+    //"github.com/victoryang/api-gateway/db"
     Log "github.com/victoryang/api-gateway/log"
 
     "github.com/spf13/cobra"
@@ -28,7 +29,7 @@ func handleSignals(apiserver *api.Server) error {
 
             stopAdminServer()
 
-            db.CloseDB()
+            //db.CloseDB()
 
             Log.CloseFile()
 
@@ -46,7 +47,7 @@ func runDaemon(cmd *cobra.Command, args []string) error {
 
     startAdminServer(cfg.Admin)
 
-    SetUpDatabase(cfg.Databases)
+    //SetUpDatabase(cfg.Databases)
 
     apiserver := api.NewApiServer(cfg)
     if apiserver == nil {
