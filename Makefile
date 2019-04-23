@@ -5,7 +5,7 @@ GO = go
 all: api-gateway
 
 api-gateway:
-	GO111MODULE=on CC=arm-linux-gnueabihf-gcc GOOS=linux GOARCH=arm GOARM=6 CGO_ENABLED=1 $(GO) build -v -mod=vendor -o $@
+	GO111MODULE=on CC=gcc GOOS=linux CGO_ENABLED=0 $(GO) build -v -mod=vendor -o $@
 
 clean:
 	rm api-gateway

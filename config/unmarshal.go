@@ -2,8 +2,8 @@ package config
 
 import (
 	"io/ioutil"
-	
-	Log "github.com/victoryang/log"
+
+	Log "github.com/victoryang/api-gateway/log"
 	"gopkg.in/yaml.v2"
 )
 
