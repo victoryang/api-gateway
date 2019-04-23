@@ -12,6 +12,29 @@ import (
     "github.com/spf13/cobra"
 )
 
+func handleSignals() error {
+    signal.Ignore()
+    signalQueue := make(chan os.Signal)
+    signal.Notify(signalQueue, syscall.SIGHUP, os.Interrupt)
+
+    for {
+        sig := <-signalQueue
+        switch sig {
+        //TODO:
+        //case syscall.SIGHUP:
+            //reload config file
+        default:
+            stopAdminServer()
+
+            db.CloseDB()
+
+            Log.CloseFile()
+
+            return nil
+        }
+    }
+}
+
 func runDaemon(cmd *cobra.Command, args []string) error {
     cfg := LoadConfig()
 
@@ -22,4 +45,6 @@ func runDaemon(cmd *cobra.Command, args []string) error {
     startAdminServer(cfg.Admin)
 
     SetUpDatabase(cfg.Databases)
+
+    return handleSignals()
 }
