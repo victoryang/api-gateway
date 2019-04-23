@@ -15,7 +15,7 @@ func NewRootCmd() *cobra.Command {
     }
 
     flags := rootCmd.Flags()
-    flags.StringVarP(&configFile, "configure", "C", "/rbctrl/Config/elibot-server.yaml", "configuration file for api server")
+    flags.StringVarP(&configFile, "configure", "C", "/etc/distributed_tasks/config.yaml", "configuration file for api server")
     return rootCmd
 }
 

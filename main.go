@@ -1,7 +1,7 @@
 package main
 
 import (
-    "github.com/victoryang/distributed_tasks_demo/cmd"
+    "github.com/victoryang/distributed_tasks_framework/cmd"
 )
 
 func main() {
