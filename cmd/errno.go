@@ -7,6 +7,7 @@ import (
 const (
     ERR_NONE = iota
     ERR_OPEN_LOG_FILE_FAIL
+    ERR_START_APISERVER
 )
 
 func returnError(errno int) error {

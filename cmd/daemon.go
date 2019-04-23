@@ -12,7 +12,7 @@ import (
     "github.com/spf13/cobra"
 )
 
-func handleSignals() error {
+func handleSignals(apiserver *api.Server) error {
     signal.Ignore()
     signalQueue := make(chan os.Signal)
     signal.Notify(signalQueue, syscall.SIGHUP, os.Interrupt)
@@ -24,6 +24,8 @@ func handleSignals() error {
         //case syscall.SIGHUP:
             //reload config file
         default:
+            apiserver.Shutdown()
+
             stopAdminServer()
 
             db.CloseDB()
@@ -46,5 +48,12 @@ func runDaemon(cmd *cobra.Command, args []string) error {
 
     SetUpDatabase(cfg.Databases)
 
-    return handleSignals()
+    apiserver := api.NewApiServer(cfg)
+    if apiserver == nil {
+        Log.Error("Error in starting apiserver")
+        return returnError(ERR_START_APISERVER)
+    }
+    apiserver.Run()
+
+    return handleSignals(apiserver)
 }
