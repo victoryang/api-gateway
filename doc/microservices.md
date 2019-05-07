@@ -32,3 +32,25 @@
 <image src="microservices.svg"><image>
 
 ## When to use Micro Services Architecture
+- Large applications that require high release velocity
+- Complex applications that need to be highly scalable
+- Applications with rich domains or many subdomains
+- An organization that consist of small development team
+
+## Benefits
+- Independent deployments
+- Independent deployment
+- Small, focused team
+- Fault isolation
+- Mixed technology stack
+- Granular scaling
+
+## Challeges
+- Complexity
+- Development and test
+- Lack of governance
+- Network congestion and latency
+- Data integrity
+- Management
+- Versioning
+- Skillset
